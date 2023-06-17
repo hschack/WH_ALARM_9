@@ -1,0 +1,10 @@
+
+void gsm_time()
+{
+//  gsm_cmd("AT+CCLK=\"27/06/21,12:20:12-32\"\r\n", 300,50); 
+     
+    gsm_cmd("AT+CCLK?\r\n", 300,50);
+    gsm_cmd("AT+CLTS=1\r\n",300,31);  // Get Local Timestamp
+    gsm_cmd("AT&W\r\n",300,31);  // Get Local Timestamp
+    gsm_cmd("AT+CCLK?\r\n", 300,50);
+    delay(500); 
